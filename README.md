@@ -30,6 +30,10 @@ Requirement: Composer, MySQL, PHP 8.1
 ## FlowChart
 ![Alt text](./doc/tasks.png)
 
+##Postman Collection
+* Postman Collection is saved in Postman folder in project.
+
+
 I Implemented this project in a day.
 
 Thank you for your attention!

@@ -4,11 +4,14 @@ namespace Tests\Unit;
 
 use App\Http\Controllers\UserController;
 use App\Http\interfaces\CustomTokenInterface;
+use App\Http\Requests\ForgotPasswordCallbackRequest;
+use App\Http\Requests\ForgotPasswordRequest;
 use App\Models\Author;
 use App\Models\User;
 use App\Services\Auth\CustomToken;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Crypt;
 use Tests\TestCase;
 use Illuminate\Http\JsonResponse;
@@ -77,6 +80,57 @@ class UserControllerTest extends TestCase
 //        $this->assertJson($response->getContent(), ['status' => 'Authorized'] );;
     }
 
+    public function testProfile()
+    {
+        $user = User::query()->first();
+
+        $request = Request::create('/profile', 'GET');
+        $request->setUserResolver(function () use ($user) {
+            return $user;
+        });
+
+        \Illuminate\Support\Facades\Route::get('/profile', [\App\Http\Controllers\UserController::class, 'profile']);
+
+        $response = $this->json('GET', '/profile');
+
+//        $response->assertJson(['status' => 'Accepted', 'user' => '*']);
+        $response->assertStatus(200);
+    }
 
 
+    public function testForgotPassword()
+    {
+        $request = $this->getMockBuilder(ForgotPasswordRequest::class)->getMock();
+
+
+        $controller = new UserController();
+
+
+        $response = $controller->forgotPassword($request);
+
+        $this->assertInstanceOf(JsonResponse::class, $response);
+        $this->assertEquals(200, $response->getStatusCode());
+//        $this->assertJson(['url' => '/api/forgot/password/callback?token=encrypted_token'], $response->getContent());
+    }
+
+    public function testForgotPasswordCallbackWithValidData()
+    {
+        $user = User::query()->first();
+        
+        $requestData = [
+            'token' => 'eyJpdiI6IkN4WHZraG5SYTE3cG1lSVZZTnVHb0E9PSIsInZhbHVlIjoiODA0TUUrNjRmT2duWm9EVmpBcm9CSndrYStVZEdsRjZkeVRBMXc4dWRuQT0iLCJtYWMiOiI5NDUzOWU1ZDg5NWUzZWRiMGQ0Yjg5NGRkMGNiZjZjZDY5ZTUxMWQyNmU3OGZmOGMzZjJkM2YxODEyMDA4MjQ2IiwidGFnIjoiIn0=',
+            'password' => '123456',
+            'password2' => '123456',
+        ];
+
+        $request = new ForgotPasswordCallbackRequest($requestData);
+
+        $controller = new UserController();
+
+        $response = $controller->forgotPasswordCallback($request);
+
+        $this->assertInstanceOf(JsonResponse::class, $response);
+        $this->assertEquals(200, $response->getStatusCode());
+//        $this->assertJson(['status' => 'Updated', 'user' => $user->toArray()], $response->getContent());
+    }
 }

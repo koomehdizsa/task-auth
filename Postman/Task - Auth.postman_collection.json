@@ -1,0 +1,499 @@
+{
+	"info": {
+		"_postman_id": "7fd7be85-d523-4182-84e0-296c5fa4665a",
+		"name": "Task - Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2365725"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "safa@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJpdiI6InZvYmVudzFlZUg1SDZBOWFwa0s1ckE9PSIsInZhbHVlIjoiK3NydWF3MWdMVG9SNnJ0M1YxcytVQ0k4anJTemtqeTRzRVlYUkYrZFJzYlpMVTNTTnVyb2UxNmtWMS9Ua04veUZLcFo2Skx4SkdqL3cxL1Jwa3YwcFMzUUpWYU1FQ2t6eEU1MUhnWmxOUlRyOUJpdDIweUJFaXFaMjg3dUZBdU8wclVLbEZCM3FONVduTjBjVEpnVHdzblRhSVprS1FVajEvdzRhZHRHbXRvMW8yWVZRS3dJWVhSSHFpakxaYTJpb05lUzBjTU9RcW9JYTNXOG1kMDZ2ZlBBRUx5K1ZwZXRMc2UydmdiVkRrYS9NSE4vYWhwY2h5T1dLYWIyU0N3TzZUZW1yTGF2aHg1YlBRVVFtU3FZMkZUd3dNcW52OWpDaG8xTkxTenNMKzJYNmx5K2ZrbThuMnBLdCtPaTcvcmgiLCJtYWMiOiIxY2YxODg2MjNkZjczYjQwZGVhOWIxZmRjODRiYjA1OWRhY2QzYzM5NTBhOGJmMTFmNWQzNmRmZmUxZjRiMDFmIiwidGFnIjoiIn0=====",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profile",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJpdiI6IlV1UWcwUGc0dHM0UDJQK1dLU3ZzT1E9PSIsInZhbHVlIjoiQTRhZG4yNC92UFRRd1RicGMvY3dTZWp0M2RKR2I1bWtUeTJ0KzUvcWJTd0VYNFcvTUVDanhXdUhkM3VKQ1hNU2ZSZ3V2VXhtWVB3R3lSSTlVdGdhYWlTdlljT0hSdDc0V3ZhRmtpbXdNTlVSM0M1dlpZYTI2MGFCYzNSV3lTUW9waHpNbWkvb0pQRHNQdkV5S1M0QUFNM1lYVWFKbklCWDZ5bldMNE1QMTcyZk93ejdNUHR3LzF4Nk84RFUzUkV4RnBsdVJzRTVha0ZPVWQzcTh5c0pmV2Z1eGgwMTJnTmkwdEROZlNBSUdvTXJWTFgvNXArMDhaT0JWdG44L2ZlcEUxOXFTaDc0NzJMRzJLZ0xlVG44RGFtZm1lZmRINEl6ZFNORUJDd2Z1eVgyWStpS2lKREJlNnp5T25MaUw4WUwiLCJtYWMiOiI4N2EzOTNiMjg2NTM3MGE4MmQ1ODhkOTY4OGExYjI1ZjgzNzUxZjFjMmZjYzM3NTE0MzI0ZjRmMzdmODU5M2JmIiwidGFnIjoiIn0=",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "safa5@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "Account",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12323324",
+							"type": "text"
+						},
+						{
+							"key": "shaba",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "profit",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "man",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "tehran",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register/account",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register",
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Author",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJpdiI6IlV1UWcwUGc0dHM0UDJQK1dLU3ZzT1E9PSIsInZhbHVlIjoiQTRhZG4yNC92UFRRd1RicGMvY3dTZWp0M2RKR2I1bWtUeTJ0KzUvcWJTd0VYNFcvTUVDanhXdUhkM3VKQ1hNU2ZSZ3V2VXhtWVB3R3lSSTlVdGdhYWlTdlljT0hSdDc0V3ZhRmtpbXdNTlVSM0M1dlpZYTI2MGFCYzNSV3lTUW9waHpNbWkvb0pQRHNQdkV5S1M0QUFNM1lYVWFKbklCWDZ5bldMNE1QMTcyZk93ejdNUHR3LzF4Nk84RFUzUkV4RnBsdVJzRTVha0ZPVWQzcTh5c0pmV2Z1eGgwMTJnTmkwdEROZlNBSUdvTXJWTFgvNXArMDhaT0JWdG44L2ZlcEUxOXFTaDc0NzJMRzJLZ0xlVG44RGFtZm1lZmRINEl6ZFNORUJDd2Z1eVgyWStpS2lKREJlNnp5T25MaUw4WUwiLCJtYWMiOiI4N2EzOTNiMjg2NTM3MGE4MmQ1ODhkOTY4OGExYjI1ZjgzNzUxZjFjMmZjYzM3NTE0MzI0ZjRmMzdmODU5M2JmIiwidGFnIjoiIn0=",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "safa2@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "Author",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "1232332442",
+							"type": "text"
+						},
+						{
+							"key": "shaba",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "profit",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "man",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "tehran",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register/author",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register",
+						"author"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJpdiI6IlV1UWcwUGc0dHM0UDJQK1dLU3ZzT1E9PSIsInZhbHVlIjoiQTRhZG4yNC92UFRRd1RicGMvY3dTZWp0M2RKR2I1bWtUeTJ0KzUvcWJTd0VYNFcvTUVDanhXdUhkM3VKQ1hNU2ZSZ3V2VXhtWVB3R3lSSTlVdGdhYWlTdlljT0hSdDc0V3ZhRmtpbXdNTlVSM0M1dlpZYTI2MGFCYzNSV3lTUW9waHpNbWkvb0pQRHNQdkV5S1M0QUFNM1lYVWFKbklCWDZ5bldMNE1QMTcyZk93ejdNUHR3LzF4Nk84RFUzUkV4RnBsdVJzRTVha0ZPVWQzcTh5c0pmV2Z1eGgwMTJnTmkwdEROZlNBSUdvTXJWTFgvNXArMDhaT0JWdG44L2ZlcEUxOXFTaDc0NzJMRzJLZ0xlVG44RGFtZm1lZmRINEl6ZFNORUJDd2Z1eVgyWStpS2lKREJlNnp5T25MaUw4WUwiLCJtYWMiOiI4N2EzOTNiMjg2NTM3MGE4MmQ1ODhkOTY4OGExYjI1ZjgzNzUxZjFjMmZjYzM3NTE0MzI0ZjRmMzdmODU5M2JmIiwidGFnIjoiIn0=",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "safa3@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "123233244252",
+							"type": "text"
+						},
+						{
+							"key": "shaba",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "profit",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "man",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "tehran",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register/admin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJpdiI6IlV1UWcwUGc0dHM0UDJQK1dLU3ZzT1E9PSIsInZhbHVlIjoiQTRhZG4yNC92UFRRd1RicGMvY3dTZWp0M2RKR2I1bWtUeTJ0KzUvcWJTd0VYNFcvTUVDanhXdUhkM3VKQ1hNU2ZSZ3V2VXhtWVB3R3lSSTlVdGdhYWlTdlljT0hSdDc0V3ZhRmtpbXdNTlVSM0M1dlpZYTI2MGFCYzNSV3lTUW9waHpNbWkvb0pQRHNQdkV5S1M0QUFNM1lYVWFKbklCWDZ5bldMNE1QMTcyZk93ejdNUHR3LzF4Nk84RFUzUkV4RnBsdVJzRTVha0ZPVWQzcTh5c0pmV2Z1eGgwMTJnTmkwdEROZlNBSUdvTXJWTFgvNXArMDhaT0JWdG44L2ZlcEUxOXFTaDc0NzJMRzJLZ0xlVG44RGFtZm1lZmRINEl6ZFNORUJDd2Z1eVgyWStpS2lKREJlNnp5T25MaUw4WUwiLCJtYWMiOiI4N2EzOTNiMjg2NTM3MGE4MmQ1ODhkOTY4OGExYjI1ZjgzNzUxZjFjMmZjYzM3NTE0MzI0ZjRmMzdmODU5M2JmIiwidGFnIjoiIn0=",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/index",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "safa5@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/forgot/password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"forgot",
+						"password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password Calback",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/forgot/password/callback?token=eyJpdiI6IkN4WHZraG5SYTE3cG1lSVZZTnVHb0E9PSIsInZhbHVlIjoiODA0TUUrNjRmT2duWm9EVmpBcm9CSndrYStVZEdsRjZkeVRBMXc4dWRuQT0iLCJtYWMiOiI5NDUzOWU1ZDg5NWUzZWRiMGQ0Yjg5NGRkMGNiZjZjZDY5ZTUxMWQyNmU3OGZmOGMzZjJkM2YxODEyMDA4MjQ2IiwidGFnIjoiIn0=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"forgot",
+						"password",
+						"callback"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJpdiI6IkN4WHZraG5SYTE3cG1lSVZZTnVHb0E9PSIsInZhbHVlIjoiODA0TUUrNjRmT2duWm9EVmpBcm9CSndrYStVZEdsRjZkeVRBMXc4dWRuQT0iLCJtYWMiOiI5NDUzOWU1ZDg5NWUzZWRiMGQ0Yjg5NGRkMGNiZjZjZDY5ZTUxMWQyNmU3OGZmOGMzZjJkM2YxODEyMDA4MjQ2IiwidGFnIjoiIn0="
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

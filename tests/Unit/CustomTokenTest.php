@@ -31,4 +31,14 @@ class CustomTokenTest extends TestCase
         $this->assertNotNull($token);
         $this->assertIsString($token);
     }
+
+    public function testAttemptWithInvalidCredentials()
+    {
+        $customToken = new CustomToken();
+
+        $token = $customToken->attempt('invalid@example.com', 'invalid_password');
+
+        $this->assertNull($token);
+    }
+
 }

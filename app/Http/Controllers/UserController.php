@@ -10,6 +10,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\Account;
 use App\Models\Author;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -43,6 +44,7 @@ class UserController extends Controller
         return response()->json(['status' => 'Created', 'token' => $customToken->attempt($request->email, $request->password), 'user' => $user], 201);
     }
 
+    //it should be private
     public function createAuthor(Request $request)
     {
         $author = new Author($request->only(['shaba', 'slug', 'profit', 'description']));
@@ -50,7 +52,7 @@ class UserController extends Controller
         return $author;
     }
 
-    public function createAccount(Request $request)
+    private function createAccount(Request $request)
     {
         $account = new Account($request->only(['gender', 'city']));
         $account->save();
@@ -105,6 +107,7 @@ class UserController extends Controller
         {
             return response()->json(['status'=>'Bad Request'], 400);
         }
-
     }
+
+
 }
