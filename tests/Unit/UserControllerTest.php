@@ -116,7 +116,7 @@ class UserControllerTest extends TestCase
     public function testForgotPasswordCallbackWithValidData()
     {
         $user = User::query()->first();
-        
+
         $requestData = [
             'token' => 'eyJpdiI6IkN4WHZraG5SYTE3cG1lSVZZTnVHb0E9PSIsInZhbHVlIjoiODA0TUUrNjRmT2duWm9EVmpBcm9CSndrYStVZEdsRjZkeVRBMXc4dWRuQT0iLCJtYWMiOiI5NDUzOWU1ZDg5NWUzZWRiMGQ0Yjg5NGRkMGNiZjZjZDY5ZTUxMWQyNmU3OGZmOGMzZjJkM2YxODEyMDA4MjQ2IiwidGFnIjoiIn0=',
             'password' => '123456',

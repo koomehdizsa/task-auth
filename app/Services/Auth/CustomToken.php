@@ -21,7 +21,7 @@ class CustomToken implements CustomTokenInterface
         $user = User::query()->where('email', $username)->first();
 //        $auth = Hash::check($password, ($user?->password));
 
-        if($user && $password == unserialize($this->decrypt($user?->password)))
+        if($user && $password == $user?->password)
             return $this->encrypt(json_encode($user));
         else
             return null;

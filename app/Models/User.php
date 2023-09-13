@@ -60,4 +60,8 @@ class User extends Authenticatable
         $this->attributes['password'] = ($pass);
     }
 
+    public function getPasswordAttribute($value)
+    {
+        return (Crypt::decrypt($value));
+    }
 }
