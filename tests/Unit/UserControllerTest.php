@@ -118,7 +118,7 @@ class UserControllerTest extends TestCase
         $user = User::query()->first();
 
         $requestData = [
-            'token' => 'eyJpdiI6IkN4WHZraG5SYTE3cG1lSVZZTnVHb0E9PSIsInZhbHVlIjoiODA0TUUrNjRmT2duWm9EVmpBcm9CSndrYStVZEdsRjZkeVRBMXc4dWRuQT0iLCJtYWMiOiI5NDUzOWU1ZDg5NWUzZWRiMGQ0Yjg5NGRkMGNiZjZjZDY5ZTUxMWQyNmU3OGZmOGMzZjJkM2YxODEyMDA4MjQ2IiwidGFnIjoiIn0=',
+            'token' => 'eyJpdiI6ImJaclpvUmhZblZucjlMWldQSEJGVGc9PSIsInZhbHVlIjoiZCticlhWQUVxNXoyMWtteU00R2dhc3pzUnBKQTZYcm4rdW9PYlRiM1NJZz0iLCJtYWMiOiJlYTBlM2E3ZDMyZDA4MTg1MGU1MWI5YTRkZjJkNmEyOTE5NWM0ZmZmNzZkMjMwNWY0OWMxODVjNTRiZWE2YjY4IiwidGFnIjoiIn0=',
             'password' => '123456',
             'password2' => '123456',
         ];
