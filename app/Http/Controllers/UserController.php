@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ForgotPasswordEvent;
 use App\Http\interfaces\CustomTokenInterface;
 use App\Http\Requests\ForgotPasswordCallbackRequest;
 use App\Http\Requests\ForgotPasswordRequest;
@@ -15,6 +16,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use function Laravel\Prompts\password;
 
@@ -84,8 +86,19 @@ class UserController extends Controller
 
     public function forgotPassword(ForgotPasswordRequest $request): \Illuminate\Http\JsonResponse
     {
+
         $email = $request->email;
+        $user = User::query()->where('email', $email)->firstOrFail();
         $token = Crypt::encrypt($email);
+
+        $url = '/api/forgot/password/callback?token='.$token;
+        event(new ForgotPasswordEvent($url));
+//        ForgotPasswordEvent::dispatch();
+        Mail::send(['text'=>'mail'], $data, function($message) {
+            $message->to('abc@gmail.com', 'Tutorials Point')->subject
+            ('Laravel Basic Testing Mail');
+            $message->from('xyz@gmail.com','Virat Gandhi');
+        });
         return response()->json(['url' => '/api/forgot/password/callback?token='.$token], 200);
     }
 

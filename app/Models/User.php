@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class User extends Authenticatable
 {
@@ -21,6 +22,11 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    protected $appends = [
+      'custom'
+    ];
+
     protected $fillable = [
         'name',
         'email',
@@ -35,8 +41,13 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        'id',
         'password',
         'remember_token',
+        'updated_at',
+        'created_at',
+        'accountable_type',
+        'accountable_id'
     ];
 
     /**
@@ -48,6 +59,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
 //        'password' => 'hashed',
     ];
+
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class, '');
+    }
 
     public function accountable(): MorphTo
     {
